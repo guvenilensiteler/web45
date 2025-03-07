@@ -233,7 +233,54 @@
     }
 </style>
 
+<style>
+    /* VİP CSS KİNG (DESKTOP) */
+    .vip .item {
+        padding: 0;
+        margin: 0;
+    }
+    #app-v-page:not(.mobile) .vip.king .item .vip {
+        top: 1px;
+    }
+    #app-v-page:not(.mobile) .vip.king .item .left img {
+        height: 31px;
+    }
+    .vip .item .button {
+        margin-top: 0;
+    }
 
+    /* VİP CSS KİNG (MOBILE) */
+    #app-v-page.mobile .vip.king .item {
+        height: 43px;
+    }
+    #app-v-page.mobile .vip.king .item .left {
+        display: flex;
+        align-items: center;
+        margin-top: 4px !important;
+    }
+    #app-v-page.mobile .vip.king .item .left img {
+        width: auto;
+        height: 30px;
+        margin-left: 65px;
+    }
+    #app-v-page.mobile .vip.king .item .vip {
+        height: 100px;
+        top: -47px;
+        left: 0;
+    }
+    #app-v-page.mobile .vip.king .item .button {
+        margin-top: 0px !important;
+    }
+    #app-v-page.mobile .vip .item svg {
+        margin-right: 35px;
+    }
+    #app-v-page.mobile .vip .item .text {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        text-align: center;
+    }
+</style>
 
 <body>
 <div id="preloader">
@@ -539,7 +586,7 @@
         },
         created(){
             this.loading = true;
-            axios.get('https://guvenlisiteleregir.com/data.json?v=0.0.19')
+            axios.get('https://guvenlisiteleregir.com/data.json?v=0.0.20')
                 .then((response) => {
                     this.client = response.data.html
                     this.king = _.find(this.client.categories, ['id', 1710467155101]);

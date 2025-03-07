@@ -785,14 +785,7 @@
             "site": "sterlinbet",
             "sort": "7"
           },
-          {
-            "site": "babilonbet",
-            "sort": "8"
-          },
-          {
-            "site": "bahisabi",
-            "sort": "9"
-          },
+
           {
             "site": "mersobahis",
             "sort": "10"
@@ -839,10 +832,6 @@
           {
             "site": "marsbahis",
             "sort": "34"
-          },
-          {
-            "site": "stake",
-            "sort": "35"
           }
         ]
       },
@@ -1056,7 +1045,10 @@
         "name": "Kral Site",
         "sort": "1",
         "sites": [
-
+          {
+            "site": "stake",
+            "sort": "1"
+          }
         ]
       },
       {
