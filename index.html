@@ -11,7 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <style>
+        .notyf__toast {
+            max-width: 360px !important;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V14LRNC3RR"></script>
     <script>
@@ -113,82 +119,149 @@
         background: linear-gradient(45deg, rgb(239, 253, 33), rgb(255, 0, 0)) !important;
         */
         background: linear-gradient(45deg, rgb(0 0 0), rgb(0 0 0)) !important;
+        border-radius: 0;
+        width: 420px;
     }
     .notyf__message {
         margin: auto;
         text-align: center;
         color: black;
+        display: flex;
+        cursor: pointer;
     }
     .notyf__toast {
         opacity: 0.8 !important;
     }
     .notyf__wrapper {
-        padding-top: 4px;
+        padding-top: 6px;
         padding-bottom: 8px;
+    }
+    .notyf__toast--dismissible .notyf__wrapper {
+        padding-right: 13px;
+    }
+    @media only screen and (max-width: 480px) {
+        .notyf__dismiss {
+            width: 20px;
+        }
+    }
+    .ana-sponsor {
+        display: flex;
+        justify-content: center;
     }
 </style>
 <style>
     /*
     @media (min-width: 375px) {
-        .alt-baslik {
-            font-size: 8.2px !important;
+        .tarayici-width-fs-ayarla {
+            font-size: 10px !important;
         }
     }
     @media (min-width: 390px) {
-        .alt-baslik {
-            font-size: 8.5px !important;
+        .tarayici-width-fs-ayarla {
+            font-size: 10.7px !important;
         }
     }
-    @media (min-width: 414px) {
-        .alt-baslik {
-            font-size: 9.2px !important;
-        }
-    }
-    @media (min-width: 430px) {
-        .alt-baslik {
-            font-size: 9.5px !important;
-        }
-    }
-    @media (min-width: 540px) {
-        .alt-baslik {
+    @media (min-width: 412px) {
+        .tarayici-width-fs-ayarla {
             font-size: 12px !important;
         }
     }
+    @media (min-width: 414px) {
+        .tarayici-width-fs-ayarla {
+            font-size: 12px !important;
+        }
+    }
+    @media (min-width: 430px) {
+        .tarayici-width-fs-ayarla {
+            font-size: 13px !important;
+        }
+    }
+    @media (min-width: 540px) {
+        .tarayici-width-fs-ayarla {
+            font-size: 14px !important;
+        }
+    }
     @media (min-width: 768px) {
-        .alt-baslik {
-            font-size: 13.5px !important;
+        .tarayici-width-fs-ayarla {
+            font-size: 15px !important;
         }
     }
     */
 </style>
-
 <style>
-    .text-shadow {
-        text-shadow: 2px 2px 10px #2962ff;
-        transition: all 0.5s ease-in-out;
-        -webkit-animation: flicker 0.5s ease-in-out infinite alternate;
-        animation: flicker 0.5s ease-in-out infinite alternate;
+    /* Ana Sponsor Snake Border */
+    .social kose:nth-child(1){
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, #ffffff, #4beffa);
+        animation: animate1 2s linear infinite;
     }
-
-    @-webkit-keyframes flicker {
-        0% {
-            opacity: 0.5;
-            text-shadow: 2px 2px 10px #2962ff;
+    @keyframes animate1{
+        0%{
+            transform: translateX(-100%);
         }
-        100% {
-            opacity: 1;
-            text-shadow: 2px 2px 20px #2962ff;
+
+        100%{
+            transform: translateX(100%);
         }
     }
-
-    @keyframes flicker {
-        0% {
-            opacity: 0.5;
-            text-shadow: 2px 2px 10px #2962ff;
+    .social kose:nth-child(2){
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, #ffffff, #4beffa);
+        animation: animate2 2s linear infinite;
+        animation-delay: 1s;
+    }
+    @keyframes animate2{
+        0%{
+            transform: translateY(-100%);
         }
-        100% {
-            opacity: 1;
-            text-shadow: 2px 2px 20px #2962ff;
+
+        100%{
+            transform: translateY(100%);
+        }
+    }
+    .social kose:nth-child(3){
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to left, #ffffff, #4beffa);
+        animation: animate3 2s linear infinite;
+    }
+    @keyframes animate3{
+        0%{
+            transform: translateX(100%);
+        }
+
+        100%{
+            transform: translateX(-100%);
+        }
+    }
+    .social kose:nth-child(4){
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to top, #ffffff, #4beffa);
+        animation: animate4 2s linear infinite;
+        animation-delay: 1s;
+    }
+    @keyframes animate4{
+        0%{
+            transform: translateY(100%);
+        }
+
+        100%{
+            transform: translateY(-100%);
         }
     }
 </style>
@@ -234,7 +307,42 @@
         }
     }
 </style>
-
+<style>
+    @property --angle {
+        syntax: '<angle>';
+        initial-value: 90deg;
+        inherits: true;
+    }
+    @property --gradX {
+        syntax: '<percentage>';
+        initial-value: 50%;
+        inherits: true;
+    }
+    @property --gradY {
+        syntax: '<percentage>';
+        initial-value: 0%;
+        inherits: true;
+    }
+    :root {
+        --d: 2500ms;
+        --angle: 90deg;
+        --gradX: 100%;
+        --gradY: 50%;
+        --c1: rgba(168, 239, 255, 1);
+        --c2: rgba(168, 239, 255, 0.1);
+    }
+    @keyframes borderRotate {
+        100% {
+            --angle: 420deg;
+        }
+    }
+    /*
+    a[site="bankobet"], a[site="betewin"] {
+        border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+        animation: borderRotate var(--d) linear infinite forwards;
+    }
+    */
+</style>
 <style>
     /* VİP CSS KİNG (DESKTOP) */
     .vip .item {
@@ -394,11 +502,14 @@
                     </div>
                     <div class="left">
                         <img v-if="is_mobile" :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150">
-                        <div class="text">
+                        <img v-if="!is_mobile" :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150">
+                        <div class="text" v-if="!is_mobile">
                             {{ _.find(client.sites, ['site', site.site]).desc[0] }}
                             <div> <small>SİZE ÖZEL PROMOSYONLAR</small></div>
                         </div>
-                        <img v-if="!is_mobile" :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150">
+                        <div class="text" v-if="is_mobile">
+                            VIP
+                        </div>
                         <div class="button">GİRİŞ YAP</div>
                     </div>
                     <div class="vip">
@@ -464,9 +575,13 @@
 
                         <div class="left">
                             <img :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150">
-                            <div class="text" style="font-family: 'Bebas Neue'; letter-spacing: 1.5px; ">
+                            <div class="text" style="font-family: &quot;Bebas Neue&quot;; letter-spacing: 1.5px;">
                                 <span class="font-size-x-small" v-if="_.find(client.sites, ['site', site.site]).promo_code">Promo Code:</span>
-                                <span>{{_.find(client.sites, ['site', site.site]).promo_code}}</span>
+                                <span v-bind:style="{
+                                    fontSize: _.find(client.sites, ['site', site.site]).promo_code_lowercase ? '19px' : '16px',
+                                    textTransform: _.find(client.sites, ['site', site.site]).promo_code_lowercase ? 'lowercase' : 'uppercase',
+                                    fontFamily: _.find(client.sites, ['site', site.site]).promo_code_lowercase ? 'Barlow' : 'Bebas Neue'
+                                }">{{_.find(client.sites, ['site', site.site]).promo_code}}</span>
                                 <span style="font-size:small" v-if="_.find(client.sites, ['site', site.site]).promo_code2">
                                     {{_.find(client.sites, ['site', site.site]).promo_code2}}
                                 </span>
@@ -491,11 +606,8 @@
                                 </div>
                                 <!-- PROMO KODU YOKSA -->
                                 <div v-if="!_.find(client.sites, ['site', site.site]).promo_code">
-                                    <small v-if="_.find(client.sites, ['site', site.site]).promo_code_yok && _.find(client.sites, ['site', site.site]).promo_code_yok.includes('CANLI')" class="text-shadow">
-                                        {{ _.find(client.sites, ['site', site.site]).promo_code_yok }}
-                                    </small>
-                                    <small v-if="!_.find(client.sites, ['site', site.site]).promo_code_yok || !_.find(client.sites, ['site', site.site]).promo_code_yok.includes('CANLI')">
-                                        {{ _.find(client.sites, ['site', site.site]).promo_code_yok }}
+                                    <small >
+                                        {{_.find(client.sites, ['site', site.site]).promo_code_yok}}
                                     </small>
                                 </div>
                             </div>
@@ -688,8 +800,78 @@
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // yarım saniye sonra header gizle
+        function sayfayi_asagiya_kaydir() {
+                                                                                                                        //  13 (ilk değer eğer ana sponsor varsa)
+            yukseklik = document.querySelector(isMobile() ? '.logo' : 'header').getBoundingClientRect().height - (isMobile()?0:0); // margin değerini çıkarıyoruz
+            yukseklik+= isMobile() ? 5 : 0;
+            if (yukseklik >= window.scrollY) {
+                window.scrollTo({
+                    top: yukseklik,
+                    behavior: 'smooth' // Animasyonlu kaydırma
+                });
+            }
+        }
+        //setTimeout(sayfayi_asagiya_kaydir,500);
+        loading_interval = setInterval(function () {
+            if (0 == window.scrollY) {
+                sayfayi_asagiya_kaydir();
+            } else {
+                clearInterval(loading_interval);
+            }
+        },250);
+
+        // matadorbet notify
+        const notyf = new Notyf({
+            duration: 9999999999999,
+            position: {
+                x: 'center',
+                y: 'bottom',
+            },
+            types: [{
+                type: 'error',
+                dismissible: true,
+                icon: false,
+            }]
+        });
+        notyf.open({
+            type: 'error',
+            message: `
+                <div class="left">
+                    <img src="matadorbet.png" style="width:100px;">
+                    <div style="font-size:14px; color:white;">
+                        <img src="click.webp" style="width:20px; vertical-align:sub; margin-right:3px;">
+                        500₺ ÇEVRİMSİZ BONUS
+                    </div>
+                </div>
+                <div class="middle" style="margin-left:8px; margin-right:6px; border: 1px dashed white;">
+
+                </div>
+                <div class="right">
+                    <img src="fixbet.png" style="width:75px; margin: 6.5px 9px 6px 11px;">
+                    <div style="font-size:14px; color:white;">
+                        <img src="click.webp" style="width:20px; vertical-align:sub; margin-right:3px;">
+                        555₺ KAYIT BONUSU
+                    </div>
+                </div>
+            `,
+        }).on('click', ({target, event}) => {
+            hedef = event.target.getAttribute('class');
+            hedef2 = event.target.closest('div.left,div.right,div.yeni_sag').getAttribute('class');
+            if ((hedef && hedef.includes('left')) || (hedef2 && hedef2.includes('left'))) {
+                click_site = 'matadorbet';
+            } else if ((hedef && hedef.includes('right')) || (hedef2 && hedef2.includes('right'))) {
+                click_site = 'fixbet';
+            }
+            /*
+            else if ((hedef && hedef.includes('yeni_sag')) || (hedef2 && hedef2.includes('yeni_sag'))) {
+                click_site = 'olipsbet';
+            }
+            */
+            window.open(document.querySelector('[site="'+click_site+'"]').getAttribute('href'),'_blank');
+        });
+
         // instagram linki mobilde app açar yada webte direk gider şeklinde duruma göre ayarla
-        /*
         function isMobile() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
@@ -700,21 +882,55 @@
             }
             return false;
         }
+        /*
+        // BU KULLANILMAYACAK AMA DURSUN (ARTIK INSTRAGRAM YONLENDIRMESI YAPMIYORUZ SITEDEN)
         if (!isMobile()) {
             is_element_load = setInterval(function(){
                 let e = document.querySelector('.social-button.instagram');
                 if (e) {
-                    e.setAttribute('href','https://www.instagram.com/');
+                    e.setAttribute('href','');
                     clearInterval(is_element_load);
                 }
-            },50)
+            },50);
         }
         */
 
-        // tarafbet 100$ güncel kur
+        is_element_load = setInterval(function(){
+            let e = document.querySelector(isMobile() ? '.ana-sponsor' : '.sosyal');
+            //let e = document.querySelector('.sosyal');
+            if (e) { // && !isMobile()
+                e.setAttribute('style','');
+                clearInterval(is_element_load);
+            }
+        },50);
+
+        // sadece mobilde gizle
+        if (false && isMobile()) {
+            is_element_load2 = setInterval(function(){
+                let e = document.querySelector('.diamond.row a[site="zbahis"]');
+                if (e) {
+                    e.closest('.col').setAttribute('style','display:none !important');
+                    clearInterval(is_element_load2);
+                }
+            },50);
+        }
+
+        // width ayarla CSS ile ayarlayamadım
+        is_element_load3 = setInterval(function(){
+            let e = document.querySelector('.ana-sponsor .social');
+            let e2= document.querySelector('.ana-sponsor #ana-sponsor-text');
+            if (e && e2) {
+                olcu = e.getBoundingClientRect().width;
+                if (olcu) {
+                    e2.style.width = olcu+'px';
+                    clearInterval(is_element_load3);
+                }
+            }
+        },50);
+
+        // stake 14$ güncel kur
         is_element_load4 = setInterval(function(){
-            return; // ŞU AN İPTAL
-            let e = document.querySelector('.diamond.row a[site="tarafbet"] .button');
+            let e = document.querySelector('.diamond.row a[site="stake"] .button');
             if (e) {
                 fetch("https://customers.garantibbva.com.tr/internet/digitalpublic/currency-convertor-public/v1/currency-convertor/calculate-price?&operation=0&price=1&currencySource=USD&currencyTarget=TL", {
                     "credentials": "include",
@@ -767,5 +983,6 @@
     });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 </body>
 </html>
